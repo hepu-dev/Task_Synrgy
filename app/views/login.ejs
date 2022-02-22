@@ -3,20 +3,26 @@
 
 <%- include('./partials/head.ejs'); %>
 
+<link rel="stylesheet" href="style.css">
+
 <body>
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card"> 
-      <div class="card-body">
-        <h1>Login</h1>
-        <p>Silahkan login untuk memulai</p>
-        <form method="post" action="/login" id="login-form">
-        <input name="username" type="email" placeholder="Email anda" />
-        <input name="password" type="password" placeholder="password anda" />
-        <button type="submit">submit</button>
-        </form>
-      </div>
-    </div> 
-  </div>
+  <header class="vh-100 d-flex flex-column ">
+    <main>
+      <form method="post" action="/login" id="login-form" class="form_class">
+          <div class="form_div">
+              <label>Login:</label>
+              <input class="field_class" name="username" type="email" placeholder="email" autofocus>
+              <label>Password:</label>
+              <input id="pass" class="field_class" name="password" type="password" placeholder="password">
+              <button class="submit_class" type="submit">Login</button>
+          </div>
+          <div class="info_div">
+              <a href="/register">Register Disini</a></p>
+          </div>
+      </form>
+  </main>
+  </header>
+  
   <%- include('./partials/footer.ejs'); %>
 </body>
 

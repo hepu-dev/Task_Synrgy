@@ -4,22 +4,26 @@
 <%- include('./partials/head.ejs'); %>
 
 <body>
-  <h1>Hallo Admin</h1>
-  <table>
-  <tr>
-    <th>email</th>
-    <th>delete</th>
-  </tr>
-  <% for (let i = 0; i < users.length; i++) { %>
-    <tr>
-      <td> <%= users[i].email %> </td>
-      <td><a href="/admin/delete/ <%= users[i].id %>"> delete </a> </td>
+  <header class="vh-100 d-flex flex-column ">
+    <h1>Hallo Admin</h1>
+    <table>
+    <tr >
+      <th>email</th>
+      <th>delete</th>
     </tr>
-    <% } %>
-</table>
-  <form action="/logout" method="post">
-    <input type="submit" value="logout">
-  </form>
+    <% for (let i = 0; i < users.length; i++) { %>
+      <tr>
+        <td> <%= users[i].email %> </td>
+        <br>
+        <td><a href="/admin/delete/ <%= users[i].id %>" > delete </a> </td>
+      </tr>
+      <% } %>
+  </table>
+    <form action="/logout" method="post">
+      <button class="submit_class" type="submit" value="logout">Out</button>
+    </form>
+  
+    </header>
   <%- include('./partials/footer.ejs'); %>
 </body>
 
